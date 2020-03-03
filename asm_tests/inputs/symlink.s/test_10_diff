@@ -1,0 +1,49 @@
+#!/bin/zsh
+
+# test differents .s cases 
+# compile then diff all .s files in ./inputs/
+
+INDEX=1
+for filename in inputs/*.s; do
+	SUCCESS=0
+	ERROR_MSG=""
+    [ -e "$filename" ] || continue
+	$ASM_ORIGINAL $filename > /dev/null
+	BTCODE_NAME=`echo $filename | cut -d / -f 2 | cut -d . -f 1`
+	COR_FILE="inputs/$BTCODE_NAME.cor"
+	if [ -e $COR_FILE ]; then
+		COR_ORIGINAL="tmp/$BTCODE_NAME.cor"
+		mv $COR_FILE $COR_ORIGINAL
+		$ASM_NEW $filename > /dev/null
+		COR_NEW=`echo $filename | cut -d . -f 1`".cor"
+		if [ -e $COR_NEW ]; then
+			hexdump -C $COR_ORIGINAL > "tmp/diff_original"
+			hexdump -C $COR_NEW > "tmp/diff_your"
+			DIFF=`diff tmp/diff_original tmp/diff_your`
+			rm "tmp/diff_original"
+			rm "tmp/diff_your"
+			if [ "$DIFF" != "" ]; then
+				SUCCESS=0
+				ERROR_MSG="diff error between the .cor files \n $DIFF"
+			else
+				ERROR_MSG="(comp. required)"
+				SUCCESS=1
+			fi
+		else
+			SUCCESS=0
+			ERROR_MSG="your .asm didn't compile"
+		fi
+	else	# else : the original ASM didn't compile
+		$ASM_NEW $filename > /dev/null
+		COR_NEW=`echo $filename | cut -d . -f 1`".cor"
+		if [ -e $COR_NEW ]; then
+			SUCCESS=0
+			ERROR_MSG="your .asm shouldn't had compile"
+		else
+			SUCCESS=1
+			ERROR_MSG="(comp. NOT required)"
+		fi
+	fi
+	print_result $INDEX $filename $SUCCESS $ERROR_MSG
+	let "INDEX+=1"
+done

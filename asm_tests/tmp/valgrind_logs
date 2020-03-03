@@ -1,0 +1,139 @@
+==7180== Memcheck, a memory error detector
+==7180== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7180== Using Valgrind-3.16.0.GIT and LibVEX; rerun with -h for copyright info
+==7180== Command: ./../asm -ca inputs/z_big.s
+==7180== Parent PID: 3090
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x1000030FE: debug_ocp (instruct_debug.c:36)
+==7180==    by 0x1000032A8: debug_params (instruct_debug.c:63)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101044008 is 0 bytes after a block of size 8 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x10000314A: debug_ocp (instruct_debug.c:38)
+==7180==    by 0x1000032A8: debug_params (instruct_debug.c:63)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101044008 is 0 bytes after a block of size 8 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x10000389A: push_param (debug_push.c:51)
+==7180==    by 0x1000031AB: debug_params (instruct_debug.c:53)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101045baf is 0 bytes after a block of size 15 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x1000038D2: push_param (debug_push.c:53)
+==7180==    by 0x1000031AB: debug_params (instruct_debug.c:53)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101045baf is 0 bytes after a block of size 15 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x10000396A: push_paramtype (debug_push.c:64)
+==7180==    by 0x1000031BB: debug_params (instruct_debug.c:54)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101045baf is 0 bytes after a block of size 15 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x1000039B7: push_paramtype (debug_push.c:66)
+==7180==    by 0x1000031BB: debug_params (instruct_debug.c:54)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101045baf is 0 bytes after a block of size 15 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== Invalid read of size 1
+==7180==    at 0x100003215: debug_params (instruct_debug.c:57)
+==7180==    by 0x100003396: debug_instruct (instruct_debug.c:85)
+==7180==    by 0x1000041AA: check_or_debug (read_utils.c:21)
+==7180==    by 0x10000452F: whilegnl (read_utils.c:107)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180==  Address 0x101045baf is 0 bytes after a block of size 15 alloc'd
+==7180==    at 0x10010FAD5: malloc (in /Users/thberrid/.brew/Cellar/valgrind/HEAD-60ab74a/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==7180==    by 0x100017B7F: gnl_cat_ (in ./../asm)
+==7180==    by 0x1000181C9: fdline_ (in ./../asm)
+==7180==    by 0x100018A94: gnl (in ./../asm)
+==7180==    by 0x100004449: whilegnl (read_utils.c:93)
+==7180==    by 0x1000040F6: ft_read (read.c:95)
+==7180==    by 0x100001702: main (asm.c:137)
+==7180== 
+==7180== 
+==7180== HEAP SUMMARY:
+==7180==     in use at exit: 19,282 bytes in 168 blocks
+==7180==   total heap usage: 85,013 allocs, 84,845 frees, 1,955,301 bytes allocated
+==7180== 
+==7180== LEAK SUMMARY:
+==7180==    definitely lost: 0 bytes in 0 blocks
+==7180==    indirectly lost: 0 bytes in 0 blocks
+==7180==      possibly lost: 8,840 bytes in 7 blocks
+==7180==    still reachable: 10,442 bytes in 161 blocks
+==7180==         suppressed: 0 bytes in 0 blocks
+==7180== Rerun with --leak-check=full to see details of leaked memory
+==7180== 
+==7180== For lists of detected and suppressed errors, rerun with: -s
+==7180== ERROR SUMMARY: 6900 errors from 7 contexts (suppressed: 398 from 10)
